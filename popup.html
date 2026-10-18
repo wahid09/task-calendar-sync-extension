@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Work Plan Calendar Sync</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div class="brand-icon">✓</div>
+      <div>
+        <h1>Work Plan Sync</h1>
+        <p>Google Sheets → Google Calendar</p>
+      </div>
+    </header>
+
+    <section class="card">
+      <div class="section-heading">
+        <h2>Your spreadsheets</h2>
+        <span class="muted">Manual sync</span>
+      </div>
+      <label for="spreadsheetSelect">Saved spreadsheet</label>
+      <select id="spreadsheetSelect">
+        <option value="">No spreadsheet added</option>
+      </select>
+      <div class="button-row">
+        <button id="syncButton" class="primary" disabled>Sync Now</button>
+        <button id="removeButton" class="secondary" disabled>Remove</button>
+      </div>
+      <div id="sheetInfo" class="small muted">Add a Google Sheet to get started.</div>
+    </section>
+
+    <section class="card">
+      <h2>Add a spreadsheet</h2>
+      <label for="spreadsheetUrl">Google Sheets URL or spreadsheet ID</label>
+      <input id="spreadsheetUrl" type="text" placeholder="Paste spreadsheet URL or ID" autocomplete="off">
+      <button id="addButton" class="secondary full-width">Add spreadsheet</button>
+      <p class="help">The Google account you authorize must have edit access to the spreadsheet.</p>
+    </section>
+
+    <section class="card settings">
+      <h2>Sync settings</h2>
+      <div class="setting-line"><span>Task column</span><strong>Task Name</strong></div>
+      <div class="setting-line"><span>Date column</span><strong>Planned Date</strong></div>
+      <div class="setting-line"><span>Event type</span><strong>Timed or all-day</strong></div>
+      <div class="setting-line"><span>Calendar</span><strong>Primary</strong></div>
+      <div class="setting-line"><span>Automatic sync</span><strong>Off</strong></div>
+    </section>
+
+    <section id="statusPanel" class="status-panel" aria-live="polite">
+      <div id="statusTitle" class="status-title">Ready</div>
+      <div id="statusMessage" class="status-message">Choose a spreadsheet or add one.</div>
+      <div id="statusDetails" class="status-details"></div>
+    </section>
+    <footer>Sync only Pending and In Progress tasks. Add Start Time and End Time for timed events, or leave both blank for all-day events.</footer>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>

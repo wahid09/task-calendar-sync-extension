@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Work Plan Calendar Sync",
+  "version": "1.2.0",
+  "description": "Manually synchronize Pending and In Progress Google Sheets tasks to timed or all-day events in your primary Google Calendar.",
+  "permissions": [
+    "identity",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://sheets.googleapis.com/*",
+    "https://www.googleapis.com/*",
+    "https://calendar.googleapis.com/*"
+  ],
+  "oauth2": {
+    "client_id": "REPLACE_WITH_YOUR_CHROME_EXTENSION_OAUTH_CLIENT_ID.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/spreadsheets",
+      "https://www.googleapis.com/auth/calendar.events"
+    ]
+  },
+  "action": {
+    "default_title": "Work Plan Calendar Sync",
+    "default_popup": "popup.html"
+  }
+}
